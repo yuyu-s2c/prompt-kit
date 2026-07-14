@@ -1,0 +1,68 @@
+{
+  "name": "prompt-kit",
+  "version": "0.1.0",
+  "description": "Portable prompt-engineering utilities extracted from RPChat",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./arkts": {
+      "types": "./dist/adapters/arkts.d.ts",
+      "import": "./dist/adapters/arkts.js",
+      "require": "./dist/adapters/arkts.cjs",
+      "default": "./dist/adapters/arkts.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^20.14.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.3.0",
+    "semantic-release": "^24.0.0",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "prompt-engineering",
+    "llm",
+    "chat",
+    "deepseek",
+    "openai",
+    "roleplay",
+    "harmonyos",
+    "arkts"
+  ],
+  "license": "MIT"
+}
