@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/prompt-kit.svg)](https://www.npmjs.com/package/prompt-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Gitee Actions](https://img.shields.io/badge/Gitee%20Actions-CI-blue)](https://gitee.com/yu9929/prompt-kit/actions)
 
 一套从 RPChat 里拆出来的、可移植的 prompt 工程小工具。
 
@@ -102,6 +103,33 @@ npm run lint
 npm run format:check
 npm run coverage
 ```
+
+## CI / 自动发布
+
+每次 `push` 到 `main` 分支或提交 PR 时，Gitee Actions 会自动运行：
+
+```text
+npm run typecheck
+npm run lint
+npm run format:check
+npm test
+npm run build
+```
+
+### 发布到 npm
+
+1. 在 Gitee 仓库设置里添加 Secret：`NPM_TOKEN`。
+2. 更新 `package.json` 中的版本号，例如 `0.1.1`。
+3. 提交并推送 tag：
+
+```bash
+git add package.json
+git commit -m "chore: bump version to 0.1.1"
+git tag v0.1.1
+git push origin main v0.1.1
+```
+
+推送 tag 后，CI 会自动将包发布到 npm。
 
 ## 许可
 
