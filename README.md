@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/prompt-kit.svg)](https://www.npmjs.com/package/prompt-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Gitee Actions](https://img.shields.io/badge/Gitee%20Actions-CI-blue)](https://gitee.com/yu9929/prompt-kit/actions)
+[![Gitee Go](https://img.shields.io/badge/Gitee%20Go-流水线-blue)](https://gitee.com/yu9929/prompt-kit/pipelines)
 
 一套从 RPChat 里拆出来的、可移植的 prompt 工程小工具。
 
@@ -106,21 +106,21 @@ npm run coverage
 
 ## CI / 自动发布
 
-每次 `push` 到 `main` 分支或提交 PR 时，Gitee Actions 会自动运行：
+本仓库使用 **Gitee Go** 流水线：
 
-```text
-npm run typecheck
-npm run lint
-npm run format:check
-npm test
-npm run build
-```
+- `.workflow/ci.yml`：每次 `push` 到 `main` 或提交 PR 到 `main` 时，自动运行 typecheck、lint、format、test、build。
+- `.workflow/publish.yml`：每次推送 `v*` tag 时，自动发布到 npm。
+
+### 配置 NPM_TOKEN
+
+1. 进入 Gitee 仓库 → **流水线**。
+2. 找到 `prompt-kit-publish` 流水线，进入 **参数设置**（或 **变量**）。
+3. 添加变量 `NPM_TOKEN`，值为你的 npm Access Token（建议勾选“保密”/“加密”）。
 
 ### 发布到 npm
 
-1. 在 Gitee 仓库设置里添加 Secret：`NPM_TOKEN`。
-2. 更新 `package.json` 中的版本号，例如 `0.1.1`。
-3. 提交并推送 tag：
+1. 更新 `package.json` 中的版本号，例如 `0.1.1`。
+2. 提交并推送 tag：
 
 ```bash
 git add package.json
@@ -129,7 +129,7 @@ git tag v0.1.1
 git push origin main v0.1.1
 ```
 
-推送 tag 后，CI 会自动将包发布到 npm。
+推送 tag 后，`prompt-kit-publish` 流水线会自动把包发布到 npm。
 
 ## 许可
 
