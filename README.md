@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/prompt-kit.svg)](https://www.npmjs.com/package/prompt-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-blue)](https://github.com/yu9929/prompt-kit/actions)
+[![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-blue)](https://github.com/yuyu-s2c/prompt-kit/actions)
 
 一套从 RPChat 里拆出来的、可移植的 prompt 工程小工具。
 
@@ -114,9 +114,9 @@ npm run coverage
 
 ### 配置 NPM_TOKEN
 
-1. 在 GitHub 上创建同名仓库 `prompt-kit` 并推送代码。
-2. 进入 GitHub 仓库 → **Settings → Secrets and variables → Actions**。
-3. 点击 **New repository secret**，Name 填 `NPM_TOKEN`，Secret 填你的 npm Access Token。
+1. 打开仓库设置页面：https://github.com/yuyu-s2c/prompt-kit/settings/secrets/actions
+2. 点击 **New repository secret**。
+3. Name 填 `NPM_TOKEN`，Secret 填你的 npm Access Token，然后点 **Add secret**。
 
 ### 发布到 npm
 
