@@ -1,6 +1,6 @@
 {
   "name": "@yuyu-s2c/prompt-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Portable prompt-engineering utilities extracted from RPChat",
   "type": "module",
   "main": "./dist/index.cjs",
