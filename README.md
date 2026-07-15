@@ -1,6 +1,6 @@
 # prompt-kit
 
-[![npm version](https://img.shields.io/npm/v/prompt-kit.svg)](https://www.npmjs.com/package/prompt-kit)
+[![npm version](https://img.shields.io/npm/v/@yuyu-s2c/prompt-kit.svg)](https://www.npmjs.com/package/@yuyu-s2c/prompt-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-blue)](https://github.com/yuyu-s2c/prompt-kit/actions)
 
@@ -21,7 +21,7 @@ prompt-kit 把 RPChat 中反复出现的 prompt 拼接、消息组装、SSE 流�
 ## 安装
 
 ```bash
-npm install prompt-kit
+npm install @yuyu-s2c/prompt-kit
 ```
 
 ## 快速开始
@@ -32,7 +32,7 @@ import {
   assembleChatMessages,
   ChatClient,
   TagMapper,
-} from 'prompt-kit'
+} from '@yuyu-s2c/prompt-kit'
 
 const system = buildSystemPrompt({
   base: 'You are a helpful assistant.',
@@ -63,8 +63,8 @@ console.log(instructions)
 ## 在 HarmonyOS ArkTS 中使用
 
 ```ts
-import { ChatClient } from 'prompt-kit'
-import { ArkTSStreamCallbacks, createArkTSFetchAdapter } from 'prompt-kit/arkts'
+import { ChatClient } from '@yuyu-s2c/prompt-kit'
+import { ArkTSStreamCallbacks, createArkTSFetchAdapter } from '@yuyu-s2c/prompt-kit/arkts'
 
 const client = new ChatClient({
   apiKey: 'your-api-key',
